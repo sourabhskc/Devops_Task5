@@ -1,5 +1,5 @@
 # Devops_Task5
-In this Task we are going to Integrate Prometheus and Grafana on top of Kubernetes to make their data remain persistent.
+In this Task we are going to Integrate Prometheus and Grafana on top of Kubernetes to make their data remain persistent using the PVC concept.
 
 #Task Overview 
 Integrate Prometheus and Grafana and perform in following way:
