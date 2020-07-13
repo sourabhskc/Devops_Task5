@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: prometheus-svc
+  labels: 
+    app: prom
+
+spec:
+  ports:
+    - port: 9090
+      name: prom 
+      nodePort: 30000
+  type: NodePort
+  selector:
+    app: prom

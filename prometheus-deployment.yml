@@ -1,0 +1,32 @@
+apiVersion: apps/v1
+kind: Deployment
+
+metadata:
+  name: prometheus-deployment
+  labels: 
+    app: prom
+
+spec:
+  selector:
+    matchLabels:
+      app: prom
+  strategy:
+    type: Recreate
+  template:
+    metadata:
+      labels:
+        app: prom
+    spec:
+      containers:
+      - image: vimal13/prometheus
+        name: prometheus-container
+
+        volumeMounts:
+        - name: prometheus-storage
+          mountPath: /prometheus
+       
+      volumes:
+      - name: prometheus-storage
+        persistentVolumeClaim:
+          claimName: prometheus-pvc
+
